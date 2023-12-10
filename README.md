@@ -19,25 +19,25 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chsh -s $(which zsh)
 ```
 
-## Zsh Syntax Highlight
+### Zsh Syntax Highlight
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
-## Zsh Auto Suggestions
+### Zsh Auto Suggestions
 ```
 git clone https://github.com/zsh-users/zsh-autosuggestions \$ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-## Zsh Fuzzy Finder
+### Zsh Fuzzy Finder
 ```
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 ```
 
-## Add installed plugins
+### Add installed plugins
 ```
 nano ~/.zshrc
 ```
@@ -60,10 +60,12 @@ source ~/.zshrc
 ```
 
 
-# Code Editor
+### Code Editor
+```
+sudo apt install code-insiders
+```
 
-
-# Fira Code Font
+### Fira Code Font
 ```
 sudo apt install fonts-firacode
 ```
@@ -74,7 +76,7 @@ On vscode settings json:
 "editor.fontLigatures": true,
 ```
 
-## [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
+### [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
 
 ```
 sudo apt install terminator

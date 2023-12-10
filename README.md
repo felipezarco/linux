@@ -1,7 +1,12 @@
 # linux-dev
 Linux Development Configurations
 
-## Oh My Zsh!
+### Git
+```
+sudo apt-get install git
+```
+
+### Oh My Zsh!
 ```
 sudo apt-get install zsh
 sudo snap install curl
@@ -30,33 +35,29 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 ## Add installed plugins
 ```
 nano ~/.zshrc
+```
 
-replace 
+replace `plugins=(git)`
 
-plugins=(git)
-
-with
-
+```
 plugins=(
   git
-  zsh-syntax-highlighting
   zsh-autosuggestions
   fzf
 )
+
+alias code='code-insiders'
+alias term='terminator'
 ```
-# Alias (bash)
+
 ```
-nano ~/.bash_profile
-alias code='code-insiders' # add to bash_profile
-source ~/.bash_profile
-```
-# Alias: (zsh)
-```
-nano ~/.zshrc
-Find # Example alias and add uncommented
-alias code="code-insiders ~/.zshrc"
 source ~/.zshrc
 ```
+
+
+# Code Editor
+
+
 # Fira Code Font
 ```
 sudo apt install fonts-firacode
@@ -71,6 +72,7 @@ On vscode settings json:
 ## [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
 
 ```
+sudo apt install terminator
 mkdir ~/.config/terminator
 touch ~/.config/terminator/config;
 echo '[global_config]

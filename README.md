@@ -33,6 +33,8 @@ source ~/.nvm/nvm.sh
 
 ```shell
 source ~/.zshrc
+sudo snap remove curl a
+sudo apt install curl
 nvm install node
 ```
 

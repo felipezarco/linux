@@ -6,6 +6,11 @@ Linux Development Configurations
 sudo apt-get install git
 ```
 
+### Misc
+```
+sudo apt-get install screenfetch
+```
+
 ### Oh My Zsh!
 ```
 sudo apt-get install zsh

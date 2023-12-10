@@ -19,11 +19,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chsh -s $(which zsh)
 ```
 
-### NVM
+### NVM & Node
 ```shell
 git clone https://github.com/nvm-sh/nvm.git .nvm
 nano ~/.zshrc
-```
+``
 
 Add line:
 
@@ -33,6 +33,13 @@ source ~/.nvm/nvm.sh
 
 ```shell
 source ~/.zshrc
+nvm install node
+```
+
+### Npm & Yarn
+```shell
+sudo apt install npm
+sudo npm install --global yarn
 ```
 
 ### Zsh Syntax Highlight

@@ -2,17 +2,17 @@
 Linux Development Configurations
 
 ### Git
-```
+```shell
 sudo apt-get install git
 ```
 
 ### Misc
-```
+```shell
 sudo apt-get install screenfetch
 ```
 
 ### Oh My Zsh!
-```
+```shell
 sudo apt-get install zsh
 sudo snap install curl
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -27,24 +27,24 @@ source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ```
 
 ### Zsh Auto Suggestions
-```
+```shell
 git clone https://github.com/zsh-users/zsh-autosuggestions \$ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 ### Zsh Fuzzy Finder
-```
+```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf && ~/.fzf/install
 ```
 
-### Add installed plugins
-```
+### Add installed plugins and alias
+```shell
 nano ~/.zshrc
 ```
 
-replace `plugins=(git)`
+replace `plugins=(git)` with
 
-```
+```shell
 plugins=(
   git
   zsh-autosuggestions
@@ -55,30 +55,30 @@ alias code='code-insiders'
 alias term='terminator'
 ```
 
-```
+```shell
 source ~/.zshrc
 ```
 
 
 ### Code Editor
-```
+```shell
 sudo apt install code-insiders
 ```
 
 ### Fira Code Font
-```
+```shell
 sudo apt install fonts-firacode
 ```
 
 On vscode settings json:
-```
+```json
 "editor.fontFamily": "'Fira Code'",
 "editor.fontLigatures": true,
 ```
 
 ### [Terminator](https://gnometerminator.blogspot.com/p/introduction.html)
 
-```
+```shell
 sudo apt install terminator
 mkdir ~/.config/terminator
 touch ~/.config/terminator/config;
@@ -117,9 +117,9 @@ echo '[global_config]
     background_type = transparent' > ~/.config/terminator/config
 ```
 
-# Java
+### Java
 
-```
+```java
 sudo snap install intellij-idea-community --classic
 sudo snap install intellij-idea-ultimate --classic
 

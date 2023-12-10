@@ -19,6 +19,22 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 chsh -s $(which zsh)
 ```
 
+### NVM
+```shell
+git clone https://github.com/nvm-sh/nvm.git .nvm
+nano ~/.zshrc
+```
+
+Add line:
+
+```shell
+source ~/.nvm/nvm.sh
+```
+
+```shell
+source ~/.zshrc
+```
+
 ### Zsh Syntax Highlight
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git

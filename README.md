@@ -1,4 +1,4 @@
-# linux-dev
+# linux
 Linux Development Configurations
 
 ### Git

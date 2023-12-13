@@ -23,13 +23,15 @@ chsh -s $(which zsh)
 ```shell
 git clone https://github.com/nvm-sh/nvm.git .nvm
 nano ~/.zshrc
-``
+```
 
-Add line:
+Add the line:
 
 ```shell
 source ~/.nvm/nvm.sh
 ```
+
+Then run:
 
 ```shell
 source ~/.zshrc

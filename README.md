@@ -35,7 +35,7 @@ Then run:
 
 ```shell
 source ~/.zshrc
-sudo snap remove curl a
+sudo snap remove curl
 sudo apt install curl
 nvm install node
 ```

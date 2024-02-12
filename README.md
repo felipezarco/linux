@@ -21,7 +21,7 @@ chsh -s $(which zsh)
 
 ### NVM & Node
 ```shell
-git clone https://github.com/nvm-sh/nvm.git .nvm
+git clone https://github.com/nvm-sh/nvm.git ~/.nvm
 nano ~/.zshrc
 ```
 

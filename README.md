@@ -87,9 +87,14 @@ source ~/.zshrc
 ```
 
 
-### Code Editor
+### Cedilha
 ```shell
-sudo apt install code-insiders
+sudo gedit /etc/environment
+```
+
+include this line in the file:
+```shell
+GTK_IM_MODULE=cedilla
 ```
 
 ### Fira Code Font

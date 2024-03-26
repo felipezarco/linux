@@ -6,6 +6,11 @@ Linux Development Configurations
 sudo apt-get install git
 ```
 
+### Gnome Tweaks
+```shell
+sudo apt-get install gnome-tweaks
+```
+
 ### Misc
 ```shell
 sudo apt-get install screenfetch

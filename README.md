@@ -162,6 +162,17 @@ sudo update-initramfs -u -k all
 sudo reboot # optional
 ```
 
+### Google Calendar
+
+
+https://atareao.es/aplicacion/calendar-indicator-o-google-calendar-en-ubuntu/
+```
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt-get update
+sudo apt-get install calendar-indicator
+```
+
+
 ### Java
 
 ```java

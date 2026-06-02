@@ -47,7 +47,7 @@ linux/
 
 | Software | Script               | O que faz                                                                                                  |
 |----------|----------------------|------------------------------------------------------------------------------------------------------------|
-| WezTerm     | `configs/wezterm.sh`     | Instala o WezTerm (repo oficial `apt.fury.io/wez`, se faltar) e escreve `~/.wezterm.lua`: keybindings de panes; `Ctrl+W` fecha só o pane atual. |
+| WezTerm     | `configs/wezterm.sh`     | Instala o WezTerm (repo oficial `apt.fury.io/wez`, se faltar) e escreve `~/.wezterm.lua`: keybindings de panes; `Ctrl+W` e `Ctrl+Shift+W` fecham só o pane atual. |
 | screenFetch | `configs/screenfetch.sh` | Instala o screenFetch (info do sistema no terminal). Sem arquivo de config.                                |
 | zsh         | `configs/zsh.sh`         | Instala zsh + oh-my-zsh + `zsh-syntax-highlighting` + `zsh-autosuggestions`; ajusta `plugins=(...)`, sourcing e aliases (`code`, `term`) no `~/.zshrc`; define o zsh como shell padrão. |
 | fzf         | `configs/fzf.sh`         | Instala o binário do fzf em `~/.fzf` (`--all --no-update-rc`); a integração com o shell é referenciada pelo `zsh.sh`. |

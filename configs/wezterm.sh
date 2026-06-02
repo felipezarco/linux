@@ -69,6 +69,7 @@ config.keys = {
   -- Fechar SOMENTE o pane atual (não a tab nem a janela).
   -- confirm = false fecha na hora; troque para true se quiser confirmação.
   { key = 'w', mods = 'CTRL', action = act.CloseCurrentPane { confirm = false } },
+  { key = 'w', mods = 'CTRL|SHIFT', action = act.CloseCurrentPane { confirm = false } },
 
   -- Novo split à direita (panes lado a lado)
   { key = 'O', mods = 'CTRL|SHIFT', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },

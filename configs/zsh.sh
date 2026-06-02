@@ -92,6 +92,31 @@ grep -q "\.fzf\.zsh" "${ZSHRC}" \
 append_once "alias code='code-insiders'" "${ZSHRC}"
 append_once "alias term='terminator'" "${ZSHRC}"
 
+# tmux auto-session: first terminal attaches "main"; each split gets its own
+# numbered session (1, 2, 3, …) so panes are independent instead of mirrored.
+# (tmux itself isn't installed here; the block is guarded by `command -v tmux`.)
+# Drop any legacy single-line auto-attach first so it can't `exec` before this.
+if command -v perl >/dev/null 2>&1; then
+  perl -ni -e 'print unless /exec tmux new-session -A -s main/' "${ZSHRC}"
+fi
+if ! grep -q 'tmux: first terminal gets/reattaches' "${ZSHRC}"; then
+  cat >> "${ZSHRC}" <<'TMUXBLOCK'
+
+# tmux: first terminal gets/reattaches "main"; each new split gets its own
+# numbered session (1, 2, 3, …) so panes are independent instead of mirrored.
+if [ -z "$TMUX" ] && command -v tmux >/dev/null; then
+  if ! tmux has-session -t main 2>/dev/null; then
+    exec tmux new-session -s main          # no main yet → create it
+  elif [ -z "$(tmux list-clients -t main 2>/dev/null)" ]; then
+    exec tmux attach-session -t main       # main idle (reopened) → reattach
+  else
+    i=1; while tmux has-session -t "$i" 2>/dev/null; do i=$((i + 1)); done
+    exec tmux new-session -s "$i"          # main busy → fresh numbered session
+  fi
+fi
+TMUXBLOCK
+fi
+
 echo "~/.zshrc configured."
 
 # --- 5. Default shell -------------------------------------------------------

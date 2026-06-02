@@ -31,16 +31,26 @@ Cada instalador faz backup do arquivo existente (com timestamp) antes de sobresc
 ```
 linux/
 ├── README.md
-├── install.sh          # orquestra todos os instaladores em configs/
+├── install.sh             # orquestra todos os instaladores em configs/
 └── configs/
-    └── wezterm.sh      # escreve ~/.wezterm.lua
+    ├── fzf.sh             # instala o binário do fzf em ~/.fzf
+    ├── screenfetch.sh     # instala screenFetch
+    ├── wezterm.sh         # instala WezTerm + escreve ~/.wezterm.lua
+    └── zsh.sh             # zsh + oh-my-zsh + plugins + ~/.zshrc
 ```
+
+> O `install.sh` roda os scripts em ordem alfabética (`fzf`, `screenfetch`,
+> `wezterm`, `zsh`). O `zsh.sh` é dono de todo o `~/.zshrc`; o `fzf.sh` só
+> instala o binário (não mexe no `~/.zshrc`), então a ordem entre eles não importa.
 
 ## Configurações disponíveis
 
 | Software | Script               | O que faz                                                                                                  |
 |----------|----------------------|------------------------------------------------------------------------------------------------------------|
-| WezTerm  | `configs/wezterm.sh` | Instala o WezTerm (repo oficial `apt.fury.io/wez`, se faltar) e escreve `~/.wezterm.lua`: keybindings de panes; `Ctrl+W` fecha só o pane atual. |
+| WezTerm     | `configs/wezterm.sh`     | Instala o WezTerm (repo oficial `apt.fury.io/wez`, se faltar) e escreve `~/.wezterm.lua`: keybindings de panes; `Ctrl+W` fecha só o pane atual. |
+| screenFetch | `configs/screenfetch.sh` | Instala o screenFetch (info do sistema no terminal). Sem arquivo de config.                                |
+| zsh         | `configs/zsh.sh`         | Instala zsh + oh-my-zsh + `zsh-syntax-highlighting` + `zsh-autosuggestions`; ajusta `plugins=(...)`, sourcing e aliases (`code`, `term`) no `~/.zshrc`; define o zsh como shell padrão. |
+| fzf         | `configs/fzf.sh`         | Instala o binário do fzf em `~/.fzf` (`--all --no-update-rc`); a integração com o shell é referenciada pelo `zsh.sh`. |
 
 ## Adicionando uma nova configuração
 

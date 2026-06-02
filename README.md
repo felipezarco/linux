@@ -1,0 +1,50 @@
+# linux
+
+Repositório central das minhas configurações dinâmicas (dotfiles) no Linux.
+
+Cada arquivo em `configs/` é um instalador **independente e idempotente**, nomeado
+pelo software que configura (ex.: `wezterm.sh`). O `install.sh` roda todos eles.
+
+## Instalação
+
+```bash
+git clone <url-do-repo> ~/linux && cd ~/linux && ./install.sh
+```
+
+Se o repositório já estiver clonado:
+
+```bash
+cd ~/linux && ./install.sh
+```
+
+## Uso
+
+```bash
+./install.sh            # aplica todas as configurações
+./install.sh wezterm    # aplica apenas configs/wezterm.sh
+```
+
+Cada instalador faz backup do arquivo existente (com timestamp) antes de sobrescrever.
+
+## Estrutura
+
+```
+linux/
+├── README.md
+├── install.sh          # orquestra todos os instaladores em configs/
+└── configs/
+    └── wezterm.sh      # escreve ~/.wezterm.lua
+```
+
+## Configurações disponíveis
+
+| Software | Script               | O que faz                                                                                                  |
+|----------|----------------------|------------------------------------------------------------------------------------------------------------|
+| WezTerm  | `configs/wezterm.sh` | Instala o WezTerm (repo oficial `apt.fury.io/wez`, se faltar) e escreve `~/.wezterm.lua`: keybindings de panes; `Ctrl+W` fecha só o pane atual. |
+
+## Adicionando uma nova configuração
+
+1. Crie `configs/<software>.sh` (ex.: `nvim.sh`, `zsh.sh`).
+2. Comece com `#!/usr/bin/env bash` e `set -euo pipefail`.
+3. Faça backup do arquivo de destino antes de sobrescrever.
+4. Pronto — o `install.sh` passa a incluí-lo automaticamente.

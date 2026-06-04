@@ -34,13 +34,14 @@ linux/
 ├── install.sh             # orquestra todos os instaladores em configs/
 └── configs/
     ├── fzf.sh             # instala o binário do fzf em ~/.fzf
+    ├── ranger.sh          # instala ranger + escreve ~/.config/ranger/rc.conf
     ├── screenfetch.sh     # instala screenFetch
     ├── wezterm.sh         # instala WezTerm + escreve ~/.wezterm.lua
     └── zsh.sh             # zsh + oh-my-zsh + plugins + ~/.zshrc
 ```
 
-> O `install.sh` roda os scripts em ordem alfabética (`fzf`, `screenfetch`,
-> `wezterm`, `zsh`). O `zsh.sh` é dono de todo o `~/.zshrc`; o `fzf.sh` só
+> O `install.sh` roda os scripts em ordem alfabética (`fzf`, `ranger`,
+> `screenfetch`, `wezterm`, `zsh`). O `zsh.sh` é dono de todo o `~/.zshrc`; o `fzf.sh` só
 > instala o binário (não mexe no `~/.zshrc`), então a ordem entre eles não importa.
 
 ## Configurações disponíveis
@@ -51,6 +52,7 @@ linux/
 | screenFetch | `configs/screenfetch.sh` | Instala o screenFetch (info do sistema no terminal). Sem arquivo de config.                                |
 | zsh         | `configs/zsh.sh`         | Instala zsh + oh-my-zsh + `zsh-syntax-highlighting` + `zsh-autosuggestions`; ajusta `plugins=(...)`, sourcing e aliases (`code`, `term`) no `~/.zshrc`; define o zsh como shell padrão. |
 | fzf         | `configs/fzf.sh`         | Instala o binário do fzf em `~/.fzf` (`--all --no-update-rc`); a integração com o shell é referenciada pelo `zsh.sh`. |
+| ranger      | `configs/ranger.sh`      | Instala o ranger (gerenciador de arquivos no terminal, via apt) e escreve `~/.config/ranger/rc.conf` com overrides: mostra dotfiles, bordas, previews (`scope.sh`) e título da janela. |
 
 ## Adicionando uma nova configuração
 

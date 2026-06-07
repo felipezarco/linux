@@ -1,0 +1,32 @@
+folder-color already installed.
+fzf already installed: 0.73.1 (ce4bef75)
+gnome-tweaks already installed.
+ranger already installed: ranger version: ranger 1.9.3
+Backed up existing config -> /home/zarco/.config/ranger/rc.conf.bak.20260606-234648
+ranger config written -> /home/zarco/.config/ranger/rc.conf
+screenFetch already installed: [4mscreenFetch[0m - Version 3.9.1
+tmux already installed: tmux 3.4
+Backed up existing config -> /home/zarco/.tmux.conf.bak.20260606-234648
+tmux config written -> /home/zarco/.tmux.conf
+Reloaded config into running tmux.
+WezTerm already installed: wezterm 20240203-110809-5046fc22
+Backed up existing config -> /home/zarco/.wezterm.lua.bak.20260606-234648
+WezTerm config written -> /home/zarco/.wezterm.lua
+Config validated OK.
+Installing base packages (zsh, git, curl)...
+Lendo listas de pacotes...
+Construindo árvore de dependências...
+Lendo informação de estado...
+zsh já é a versão mais nova (5.9-6ubuntu2).
+git já é a versão mais nova (1:2.43.0-1ubuntu7.3).
+curl já é a versão mais nova (8.5.0-2ubuntu10.9).
+Os seguintes pacotes foram instalados automaticamente e já não são necessários:
+  libllvm19 libwoff1
+Utilize 'sudo apt autoremove' para os remover.
+0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 26 não atualizados.
+oh-my-zsh already installed.
+zsh-syntax-highlighting already present.
+zsh-autosuggestions already present.
+~/.zshrc configured.
+Default shell already zsh.
+zsh setup done. Open a new terminal (or run: exec zsh) to load it.

@@ -89,8 +89,7 @@ grep -q "\.fzf\.zsh" "${ZSHRC}" \
   || append_once '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' "${ZSHRC}"
 
 # Personal aliases (targets code-insiders / terminator are installed separately).
-append_once "alias code='code-insiders'" "${ZSHRC}"
-append_once "alias term='terminator'" "${ZSHRC}"
+append_once "alias term='wezterm'" "${ZSHRC}"
 
 # tmux auto-session: first terminal attaches "main"; each split gets its own
 # numbered session (1, 2, 3, …) so panes are independent instead of mirrored.

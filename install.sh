@@ -12,16 +12,16 @@
 
 set -euo pipefail
 
-# Resolve the repo root (directory of this script) so it works from anywhere.
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIGS_DIR="${REPO_DIR}/configs"
+LOG_FILE="${REPO_DIR}/install.log"
 
 if [[ ! -d "${CONFIGS_DIR}" ]]; then
   echo "Error: configs directory not found at ${CONFIGS_DIR}" >&2
   exit 1
 fi
 
-# Build the list of scripts to run: the names passed as args, or all of them.
+# ── Script discovery ──────────────────────────────────────────────────────────
 scripts=()
 if [[ $# -gt 0 ]]; then
   for name in "$@"; do
@@ -29,11 +29,11 @@ if [[ $# -gt 0 ]]; then
     if [[ -f "${candidate}" ]]; then
       scripts+=("${candidate}")
     else
-      echo "Warning: no config named '${name}' in configs/" >&2
+      printf 'Warning: no config named "%s" in configs/\n' "${name}" >&2
     fi
   done
 else
-  shopt -s nullglob               # empty list (not literal '*.sh') if none match
+  shopt -s nullglob
   scripts=("${CONFIGS_DIR}"/*.sh)
   shopt -u nullglob
 fi
@@ -43,24 +43,69 @@ if [[ ${#scripts[@]} -eq 0 ]]; then
   exit 0
 fi
 
-failed=()
-for script in "${scripts[@]}"; do
-  name="$(basename "${script}" .sh)"
-  echo "==> ${name}"
-  # Run in a subshell (bash <file>) so one installer's set -e / exit
-  # cannot abort the others; the 'if' keeps our own set -e from tripping.
-  if bash "${script}"; then
-    echo "    ok"
-  else
-    echo "    FAILED" >&2
-    failed+=("${name}")
+# ── Human-readable descriptions ───────────────────────────────────────────────
+describe_script() {
+  case "$1" in
+    zsh)           printf 'Updating terminal default to zsh instead of bash...' ;;
+    fzf)           printf 'Installing fzf fuzzy finder...' ;;
+    ranger)        printf 'Installing ranger for file navigation...' ;;
+    wezterm)       printf 'Setting pre-defined configs for WezTerm...' ;;
+    tmux)          printf 'Setting pre-defined configs for tmux...' ;;
+    screenfetch)   printf 'Installing screenfetch for system info display...' ;;
+    folder-color)  printf 'Installing Folder Color for custom folder icons...' ;;
+    gnome-tweaks)  printf 'Installing GNOME Tweaks for advanced settings...' ;;
+    *)             printf 'Installing %s...' "$1" ;;
+  esac
+}
+
+# ── Progress bar ──────────────────────────────────────────────────────────────
+_BAR_WIDTH=40
+_drawn=0
+
+draw_progress() {
+  local current=$1 total=$2 label="$3"
+  local pct=$(( current * 100 / total ))
+  local filled=$(( current * _BAR_WIDTH / total ))
+  local empty=$(( _BAR_WIDTH - filled ))
+
+  local bar_filled="" bar_empty=""
+  [[ $filled -gt 0 ]] && bar_filled="$(printf "%${filled}s" | tr ' ' '#')"
+  [[ $empty  -gt 0 ]] && bar_empty="$(printf "%${empty}s"  | tr ' ' '-')"
+
+  if [[ $_drawn -gt 0 ]]; then
+    printf '\033[%dA' "$_drawn"
   fi
-  echo
+  printf '\033[2K[%s%s] %3d%% (%d/%d)\n' "$bar_filled" "$bar_empty" "$pct" "$current" "$total"
+  printf '\033[2K  %s\n' "$label"
+  _drawn=2
+}
+
+# ── Run ───────────────────────────────────────────────────────────────────────
+total=${#scripts[@]}
+: > "${LOG_FILE}"
+
+printf 'Installing %d package(s)  ·  full output → %s\n\n' "$total" "${LOG_FILE}"
+
+failed=()
+for i in "${!scripts[@]}"; do
+  script="${scripts[$i]}"
+  name="$(basename "${script}" .sh)"
+  label="$(describe_script "${name}")"
+
+  draw_progress "$i" "$total" "$label"
+
+  bash "${script}" >> "${LOG_FILE}" 2>&1 || failed+=("${name}")
 done
 
+draw_progress "$total" "$total" "All done."
+echo
+
 if [[ ${#failed[@]} -gt 0 ]]; then
-  echo "Done with errors. Failed: ${failed[*]}" >&2
+  for name in "${failed[@]}"; do
+    printf '  \033[31m✗  %s failed\033[0m\n' "$name" >&2
+  done
+  printf '\n  See %s for details.\n\n' "${LOG_FILE}" >&2
   exit 1
 fi
 
-echo "All configs installed."
+printf '  \033[32m✓  All %d configs installed successfully.\033[0m\n\n' "$total"

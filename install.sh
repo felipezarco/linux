@@ -52,6 +52,7 @@ describe_script() {
     wezterm)       printf 'Setting pre-defined configs for WezTerm...' ;;
     tmux)          printf 'Setting pre-defined configs for tmux...' ;;
     screenfetch)   printf 'Installing screenfetch for system info display...' ;;
+    evolution)     printf 'Installing Evolution + restoring mail config (sound, signature, prefs)...' ;;
     folder-color)  printf 'Installing Folder Color for custom folder icons...' ;;
     gnome-tweaks)  printf 'Installing GNOME Tweaks for advanced settings...' ;;
     *)             printf 'Installing %s...' "$1" ;;

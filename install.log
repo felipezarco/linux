@@ -1,29 +1,212 @@
-folder-color already installed.
-fzf already installed: 0.73.1 (ce4bef75)
-gnome-tweaks already installed.
+Adding folder-color PPA...
+Obter:1 https://repository.spotify.com stable InRelease [3.316 B]
+Obter:2 https://download.docker.com/linux/ubuntu noble InRelease [48,5 kB]
+Obter:3 https://apt.postgresql.org/pub/repos/apt noble-pgdg InRelease [189 kB]
+Obter:4 https://packages.microsoft.com/repos/code stable InRelease [3.590 B]
+Erro:1 https://repository.spotify.com stable InRelease
+  As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+Obter:5 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Atingido:6 http://archive.ubuntu.com/ubuntu noble InRelease
+Obter:7 https://apt.postgresql.org/pub/repos/apt noble-pgdg/main amd64 Packages [700 kB]
+Obter:8 https://dl.google.com/linux/chrome-canary/deb stable InRelease [1.825 B]
+Obter:9 https://packages.microsoft.com/repos/code stable/main amd64 Packages [25,9 kB]
+Obter:10 https://dl.google.com/linux/chrome/deb stable InRelease [1.825 B]
+Obter:11 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [791 kB]
+Obter:12 https://dl.google.com/linux/chrome-canary/deb stable/main amd64 Packages [1.199 B]
+Obter:13 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Obter:14 http://security.ubuntu.com/ubuntu noble-security/main amd64 Components [45,0 kB]
+Obter:15 http://security.ubuntu.com/ubuntu noble-security/main amd64 c-n-f Metadata [11,7 kB]
+Obter:16 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Components [76,2 kB]
+Obter:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 c-n-f Metadata [24,2 kB]
+Obter:18 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1.199 B]
+Obter:19 https://downloads.cursor.com/aptrepo stable InRelease [2.672 B]
+Obter:20 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Obter:21 https://apt.fury.io/wez * InRelease
+Obter:22 https://downloads.cursor.com/aptrepo stable/main arm64 Packages [1.469 B]
+Obter:23 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1.069 kB]
+Obter:24 http://archive.ubuntu.com/ubuntu noble-updates/main Translation-en [266 kB]
+Obter:25 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [180 kB]
+Obter:26 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 c-n-f Metadata [17,6 kB]
+Obter:27 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1.192 kB]
+Obter:28 https://downloads.cursor.com/aptrepo stable/main amd64 Packages [1.448 B]
+Obter:29 http://archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [270 kB]
+Obter:30 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1.659 kB]
+Obter:31 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble InRelease [18,1 kB]
+Obter:32 http://archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [327 kB]
+Obter:33 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+Obter:34 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 c-n-f Metadata [34,9 kB]
+Obter:35 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [11,8 kB]
+Obter:36 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+Obter:37 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5.776 B]
+Obter:38 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [10,5 kB]
+Obter:39 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble/main amd64 Packages [924 B]
+Obter:40 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble/main Translation-en [292 B]
+Baixados 7.762 kB em 2s (4.563 kB/s)
+Lendo listas de pacotes...
+W: Ocorreu um erro durante a verificação da assinatura. O repositório não é atualizado e os arquivos de índice anteriores serão usados. Erro GPG: https://repository.spotify.com stable InRelease: As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou ao buscar https://repository.spotify.com/dists/stable/InRelease  As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou o download de alguns ficheiros de índice. Foram ignorados ou os antigos foram usados em seu lugar.
+Repositório: 'Types: deb
+URIs: https://ppa.launchpadcontent.net/costales/folder-color/ubuntu/
+Suites: noble
+Components: main
+'
+Descrição:
+Change a folder color used in Nautilus, Nemo & Caja File Browsers, then you can get a better visual layout
+Mais informação: https://launchpad.net/~costales/+archive/ubuntu/folder-color
+A adicionar repositório.
+Updating package lists...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Atingido:1 https://download.docker.com/linux/ubuntu noble InRelease
+Atingido:2 https://apt.postgresql.org/pub/repos/apt noble-pgdg InRelease
+Obter:3 https://repository.spotify.com stable InRelease [3.316 B]
+Atingido:4 https://packages.microsoft.com/repos/code stable InRelease
+Atingido:5 https://dl.google.com/linux/chrome-canary/deb stable InRelease
+Atingido:6 http://security.ubuntu.com/ubuntu noble-security InRelease
+Atingido:7 http://archive.ubuntu.com/ubuntu noble InRelease
+Erro:3 https://repository.spotify.com stable InRelease
+  As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+Atingido:8 https://dl.google.com/linux/chrome/deb stable InRelease
+Atingido:9 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Atingido:10 https://downloads.cursor.com/aptrepo stable InRelease
+Obter:11 https://apt.fury.io/wez * InRelease
+Atingido:12 http://archive.ubuntu.com/ubuntu noble-backports InRelease
+Atingido:13 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble InRelease
+Baixados 5.721 B em 1s (5.262 B/s)
+Lendo listas de pacotes...
+Construindo árvore de dependências...
+Lendo informação de estado...
+133 pacotes podem ser atualizados. Execute 'apt list --upgradable' para vê-los.
+W: Ocorreu um erro durante a verificação da assinatura. O repositório não é atualizado e os arquivos de índice anteriores serão usados. Erro GPG: https://repository.spotify.com stable InRelease: As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou ao buscar https://repository.spotify.com/dists/stable/InRelease  As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou o download de alguns ficheiros de índice. Foram ignorados ou os antigos foram usados em seu lugar.
+Installing folder-color...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Lendo listas de pacotes...
+Construindo árvore de dependências...
+Lendo informação de estado...
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libfwupd2
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  gir1.2-nautilus-4.0 python3-nautilus
+Os NOVOS pacotes a seguir serão instalados:
+  folder-color gir1.2-nautilus-4.0 python3-nautilus
+0 pacotes atualizados, 3 pacotes novos instalados, 0 a serem removidos e 133 não atualizados.
+É preciso baixar 4.046 kB de arquivos.
+Depois desta operação, 11,1 MB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gir1.2-nautilus-4.0 amd64 1:46.4-0ubuntu0.2 [5.496 B]
+Obter:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-nautilus amd64 4.0-1build4 [37,6 kB]
+Obter:3 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble/main amd64 folder-color all 0.4.2 [4.003 kB]
+Baixados 4.046 kB em 3s (1.295 kB/s)
+A seleccionar pacote anteriormente não seleccionado gir1.2-nautilus-4.0:amd64.
+(Lendo banco de dados ... (Lendo banco de dados ... 5%(Lendo banco de dados ... 10%(Lendo banco de dados ... 15%(Lendo banco de dados ... 20%(Lendo banco de dados ... 25%(Lendo banco de dados ... 30%(Lendo banco de dados ... 35%(Lendo banco de dados ... 40%(Lendo banco de dados ... 45%(Lendo banco de dados ... 50%(Lendo banco de dados ... 55%(Lendo banco de dados ... 60%(Lendo banco de dados ... 65%(Lendo banco de dados ... 70%(Lendo banco de dados ... 75%(Lendo banco de dados ... 80%(Lendo banco de dados ... 85%(Lendo banco de dados ... 90%(Lendo banco de dados ... 95%(Lendo banco de dados ... 100%(Lendo banco de dados ... 286936 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../gir1.2-nautilus-4.0_1%3a46.4-0ubuntu0.2_amd64.deb ...
+A descompactar gir1.2-nautilus-4.0:amd64 (1:46.4-0ubuntu0.2) ...
+A seleccionar pacote anteriormente não seleccionado python3-nautilus.
+A preparar para desempacotar .../python3-nautilus_4.0-1build4_amd64.deb ...
+A descompactar python3-nautilus (4.0-1build4) ...
+A seleccionar pacote anteriormente não seleccionado folder-color.
+A preparar para desempacotar .../folder-color_0.4.2_all.deb ...
+A descompactar folder-color (0.4.2) ...
+Configurando gir1.2-nautilus-4.0:amd64 (1:46.4-0ubuntu0.2) ...
+Configurando python3-nautilus (4.0-1build4) ...
+Configurando folder-color (0.4.2) ...
+gtk-update-icon-cache: Cache file created successfully.
+gtk-update-icon-cache: Cache file created successfully.
+A processar 'triggers' para hicolor-icon-theme (0.17-2) ...
+folder-color installed.
+fzf already installed: 0.66.0 (8cdfb23d)
+Installing gnome-tweaks...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Lendo listas de pacotes...
+Construindo árvore de dependências...
+Lendo informação de estado...
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libfwupd2
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes adicionais a seguir serão instalados:
+  gir1.2-gudev-1.0 user-session-migration
+Pacotes sugeridos:
+  gnome-shell-extension-prefs | gnome-shell-extension-manager
+Os NOVOS pacotes a seguir serão instalados:
+  gir1.2-gudev-1.0 gnome-tweaks user-session-migration
+0 pacotes atualizados, 3 pacotes novos instalados, 0 a serem removidos e 133 não atualizados.
+É preciso baixar 69,5 kB de arquivos.
+Depois desta operação, 477 kB adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble/main amd64 gir1.2-gudev-1.0 amd64 1:238-5ubuntu1 [3.806 B]
+Obter:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 user-session-migration amd64 0.4.1ubuntu3 [9.204 B]
+Obter:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 gnome-tweaks all 46.0-2 [56,5 kB]
+Baixados 69,5 kB em 0s (1.358 kB/s)
+A seleccionar pacote anteriormente não seleccionado gir1.2-gudev-1.0:amd64.
+(Lendo banco de dados ... (Lendo banco de dados ... 5%(Lendo banco de dados ... 10%(Lendo banco de dados ... 15%(Lendo banco de dados ... 20%(Lendo banco de dados ... 25%(Lendo banco de dados ... 30%(Lendo banco de dados ... 35%(Lendo banco de dados ... 40%(Lendo banco de dados ... 45%(Lendo banco de dados ... 50%(Lendo banco de dados ... 55%(Lendo banco de dados ... 60%(Lendo banco de dados ... 65%(Lendo banco de dados ... 70%(Lendo banco de dados ... 75%(Lendo banco de dados ... 80%(Lendo banco de dados ... 85%(Lendo banco de dados ... 90%(Lendo banco de dados ... 95%(Lendo banco de dados ... 100%(Lendo banco de dados ... 288889 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../gir1.2-gudev-1.0_1%3a238-5ubuntu1_amd64.deb ...
+A descompactar gir1.2-gudev-1.0:amd64 (1:238-5ubuntu1) ...
+A seleccionar pacote anteriormente não seleccionado user-session-migration.
+A preparar para desempacotar .../user-session-migration_0.4.1ubuntu3_amd64.deb ...
+A descompactar user-session-migration (0.4.1ubuntu3) ...
+A seleccionar pacote anteriormente não seleccionado gnome-tweaks.
+A preparar para desempacotar .../gnome-tweaks_46.0-2_all.deb ...
+A descompactar gnome-tweaks (46.0-2) ...
+Configurando user-session-migration (0.4.1ubuntu3) ...
+Created symlink /etc/systemd/user/graphical-session-pre.target.wants/user-session-migration.service → /usr/lib/systemd/user/user-session-migration.service.
+Configurando gir1.2-gudev-1.0:amd64 (1:238-5ubuntu1) ...
+Configurando gnome-tweaks (46.0-2) ...
+A processar 'triggers' para hicolor-icon-theme (0.17-2) ...
+A processar 'triggers' para gnome-menus (3.36.0-1.1ubuntu3) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libglib2.0-0t64:amd64 (2.80.0-6ubuntu3.8) ...
+A processar 'triggers' para desktop-file-utils (0.27-2build1) ...
+gnome-tweaks installed.
 ranger already installed: ranger version: ranger 1.9.3
-Backed up existing config -> /home/zarco/.config/ranger/rc.conf.bak.20260606-234648
-ranger config written -> /home/zarco/.config/ranger/rc.conf
+ranger config written -> /home/agx/.config/ranger/rc.conf
 screenFetch already installed: [4mscreenFetch[0m - Version 3.9.1
 tmux already installed: tmux 3.4
-Backed up existing config -> /home/zarco/.tmux.conf.bak.20260606-234648
-tmux config written -> /home/zarco/.tmux.conf
+tmux config written -> /home/agx/.tmux.conf
 Reloaded config into running tmux.
 WezTerm already installed: wezterm 20240203-110809-5046fc22
-Backed up existing config -> /home/zarco/.wezterm.lua.bak.20260606-234648
-WezTerm config written -> /home/zarco/.wezterm.lua
+Backed up existing config -> /home/agx/.wezterm.lua.bak.20260701-092800
+WezTerm config written -> /home/agx/.wezterm.lua
 Config validated OK.
 Installing base packages (zsh, git, curl)...
+W: Ocorreu um erro durante a verificação da assinatura. O repositório não é atualizado e os arquivos de índice anteriores serão usados. Erro GPG: https://repository.spotify.com stable InRelease: As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou ao buscar https://repository.spotify.com/dists/stable/InRelease  As assinaturas a seguir não puderam ser verificadas devido à chave pública não estar disponível: NO_PUBKEY 5384CE82BA52C83A
+W: Falhou o download de alguns ficheiros de índice. Foram ignorados ou os antigos foram usados em seu lugar.
 Lendo listas de pacotes...
 Construindo árvore de dependências...
 Lendo informação de estado...
 zsh já é a versão mais nova (5.9-6ubuntu2).
 git já é a versão mais nova (1:2.43.0-1ubuntu7.3).
-curl já é a versão mais nova (8.5.0-2ubuntu10.9).
-Os seguintes pacotes foram instalados automaticamente e já não são necessários:
-  libllvm19 libwoff1
-Utilize 'sudo apt autoremove' para os remover.
-0 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 26 não atualizados.
+O seguinte pacote foi instalado automaticamente e já não é necessário:
+  libfwupd2
+Utilize 'sudo apt autoremove' para o remover.
+Os pacotes a seguir serão atualizados:
+  curl libcurl3t64-gnutls libcurl4t64
+3 pacotes atualizados, 0 pacotes novos instalados, 0 a serem removidos e 130 não atualizados.
+É preciso baixar 904 kB de arquivos.
+Depois desta operação, 0 B adicionais de espaço em disco serão usados.
+Obter:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 curl amd64 8.5.0-2ubuntu10.10 [227 kB]
+Obter:2 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl4t64 amd64 8.5.0-2ubuntu10.10 [343 kB]
+Obter:3 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libcurl3t64-gnutls amd64 8.5.0-2ubuntu10.10 [335 kB]
+Baixados 904 kB em 2s (427 kB/s)
+(Lendo banco de dados ... (Lendo banco de dados ... 5%(Lendo banco de dados ... 10%(Lendo banco de dados ... 15%(Lendo banco de dados ... 20%(Lendo banco de dados ... 25%(Lendo banco de dados ... 30%(Lendo banco de dados ... 35%(Lendo banco de dados ... 40%(Lendo banco de dados ... 45%(Lendo banco de dados ... 50%(Lendo banco de dados ... 55%(Lendo banco de dados ... 60%(Lendo banco de dados ... 65%(Lendo banco de dados ... 70%(Lendo banco de dados ... 75%(Lendo banco de dados ... 80%(Lendo banco de dados ... 85%(Lendo banco de dados ... 90%(Lendo banco de dados ... 95%(Lendo banco de dados ... 100%(Lendo banco de dados ... 288941 ficheiros e diretórios atualmente instalados.)
+A preparar para desempacotar .../curl_8.5.0-2ubuntu10.10_amd64.deb ...
+A descompactar curl (8.5.0-2ubuntu10.10) sobre (8.5.0-2ubuntu10.9) ...
+A preparar para desempacotar .../libcurl4t64_8.5.0-2ubuntu10.10_amd64.deb ...
+A descompactar libcurl4t64:amd64 (8.5.0-2ubuntu10.10) sobre (8.5.0-2ubuntu10.9) ...
+A preparar para desempacotar .../libcurl3t64-gnutls_8.5.0-2ubuntu10.10_amd64.deb ...
+A descompactar libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.10) sobre (8.5.0-2ubuntu10.9) ...
+Configurando libcurl4t64:amd64 (8.5.0-2ubuntu10.10) ...
+Configurando libcurl3t64-gnutls:amd64 (8.5.0-2ubuntu10.10) ...
+Configurando curl (8.5.0-2ubuntu10.10) ...
+A processar 'triggers' para man-db (2.12.0-4build2) ...
+A processar 'triggers' para libc-bin (2.39-0ubuntu8.7) ...
 oh-my-zsh already installed.
 zsh-syntax-highlighting already present.
 zsh-autosuggestions already present.

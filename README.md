@@ -33,6 +33,12 @@ linux/
 ├── README.md
 ├── install.sh             # orquestra todos os instaladores em configs/
 └── configs/
+    ├── evolution.sh      # instala Evolution + restaura som, assinatura e prefs
+    ├── evolution/        # assets e templates usados pelo evolution.sh
+    │   ├── assets/       #   imagem da assinatura + som (yougotmail.ogg)
+    │   ├── signature.source
+    │   ├── signature.html.tmpl
+    │   └── evolution.dconf
     ├── fzf.sh             # instala o binário do fzf em ~/.fzf
     ├── ranger.sh          # instala ranger + escreve ~/.config/ranger/rc.conf
     ├── screenfetch.sh     # instala screenFetch
@@ -53,6 +59,7 @@ linux/
 | zsh         | `configs/zsh.sh`         | Instala zsh + oh-my-zsh + `zsh-syntax-highlighting` + `zsh-autosuggestions`; ajusta `plugins=(...)`, sourcing e aliases (`code`, `term`) no `~/.zshrc`; define o zsh como shell padrão. |
 | fzf         | `configs/fzf.sh`         | Instala o binário do fzf em `~/.fzf` (`--all --no-update-rc`); a integração com o shell é referenciada pelo `zsh.sh`. |
 | ranger      | `configs/ranger.sh`      | Instala o ranger (gerenciador de arquivos no terminal, via apt) e escreve `~/.config/ranger/rc.conf` com overrides: mostra dotfiles, bordas, previews (`scope.sh`) e título da janela. |
+| Evolution   | `configs/evolution.sh`   | Instala o Evolution (via apt) e restaura a configuração **independente de conta**: copia os assets para `~/common`; define o **som de novo e-mail** global (`yougotmail.ogg`); instala a **assinatura** "Assinatura Zarco" (disponível, mas não aplicada por padrão) com o caminho da imagem corrigido; aplica **preferências e layout dos painéis** via dconf. Não cria contas nem guarda senhas. A assinatura só é vinculada à identidade `felipe.zarco@agxsoftware.com` se essa conta já existir — rode de novo depois de adicionar a conta para vinculá-la. |
 
 ## Adicionando uma nova configuração
 

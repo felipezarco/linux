@@ -9,6 +9,9 @@
 #     account already exists on the machine. It is never applied to personal
 #     accounts, so composing from a home account sends no company signature.
 #   • general PREFERENCES / panel layout — via a curated dconf key-file.
+#   • AUTOSTART on GNOME login — Evolution only fetches mail (and plays the
+#     notification sound) while it is running, so it must start with the
+#     session to notify all day.
 #
 # What it deliberately does NOT do: it never creates mail accounts, servers or
 # stores passwords. Accounts stay a manual step; this script only restores the
@@ -161,5 +164,22 @@ link_signature() {
 }
 
 link_signature
+
+# ---------------------------------------------------------------------------
+# 8. Autostart on GNOME login. Evolution has no hidden/minimized mode, so the
+#    window opens visibly; the delay just keeps it from competing with the
+#    rest of the session startup.
+# ---------------------------------------------------------------------------
+AUTOSTART_DIR="${HOME}/.config/autostart"
+mkdir -p "${AUTOSTART_DIR}"
+cat > "${AUTOSTART_DIR}/org.gnome.Evolution.desktop" <<'EOF'
+[Desktop Entry]
+Type=Application
+Name=Evolution
+Exec=evolution
+Icon=org.gnome.Evolution
+X-GNOME-Autostart-Delay=10
+EOF
+echo "Autostart entry installed -> ${AUTOSTART_DIR}/org.gnome.Evolution.desktop"
 
 echo "Evolution configuration complete."

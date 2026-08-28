@@ -100,6 +100,42 @@ LUA
 
 echo "WezTerm config written -> ${CONFIG_PATH}"
 
+# ---------------------------------------------------------------------------
+# 3. Replace the WezTerm launcher/taskbar icon with the generic terminal icon
+#    from the active icon theme.
+#
+#    How: write a per-user override of the system .desktop file at
+#    ~/.local/share/applications/, changing only Icon=. XDG (GNOME, XFCE,
+#    KDE, Cinnamon…) prefers the user copy over the system one, and every
+#    freedesktop-compliant icon theme ships "utilities-terminal", so this
+#    works on any distro without touching /usr or needing sudo.
+#
+#    The window's taskbar icon is looked up from the .desktop file matched
+#    via StartupWMClass, so overriding Icon= here fixes both the launcher
+#    and the running window.
+# ---------------------------------------------------------------------------
+SYSTEM_DESKTOP="/usr/share/applications/org.wezfurlong.wezterm.desktop"
+USER_APPS_DIR="${HOME}/.local/share/applications"
+USER_DESKTOP="${USER_APPS_DIR}/org.wezfurlong.wezterm.desktop"
+TERMINAL_ICON="utilities-terminal"
+
+if [[ -f "${SYSTEM_DESKTOP}" ]]; then
+  mkdir -p "${USER_APPS_DIR}"
+  # Copy the system entry, then rewrite the Icon= line (or append one).
+  cp -f "${SYSTEM_DESKTOP}" "${USER_DESKTOP}"
+  if grep -q '^Icon=' "${USER_DESKTOP}"; then
+    sed -i "s|^Icon=.*|Icon=${TERMINAL_ICON}|" "${USER_DESKTOP}"
+  else
+    printf 'Icon=%s\n' "${TERMINAL_ICON}" >> "${USER_DESKTOP}"
+  fi
+  echo "Launcher icon overridden -> ${USER_DESKTOP} (Icon=${TERMINAL_ICON})"
+
+  command -v update-desktop-database >/dev/null 2>&1 \
+    && update-desktop-database "${USER_APPS_DIR}" >/dev/null 2>&1 || true
+else
+  echo "Warning: ${SYSTEM_DESKTOP} not found; skipped icon override." >&2
+fi
+
 # Validate the config if the wezterm binary is available.
 if command -v wezterm >/dev/null 2>&1; then
   if wezterm --config-file "${CONFIG_PATH}" show-keys >/dev/null 2>&1; then

@@ -1,157 +1,34 @@
+Chrome already installed.
+Chrome set as default browser.
+Dolphin already installed.
+Dolphin set as default file manager.
 Evolution already installed: evolution 3.52.3-0ubuntu1.1 
 Assets deployed -> /home/zarco/common
 Shutting down Evolution to apply configuration safely...
 Signature 'Assinatura Zarco' installed (available, not applied by default).
 Preferences / panel layout applied.
 New-mail sound set -> /home/zarco/common/yougotmail.ogg
-Sound theme -> zarco (overrides message-new-email)
+Sound theme -> zarco (gsettings, overrides message-new-email)
 No felipe.zarco@agxsoftware.com account present yet — signature stays available
   but unlinked. Re-run this script after adding that account to link it.
 Autostart entry installed -> /home/zarco/.config/autostart/org.gnome.Evolution.desktop
+Evolution set as default mail handler (mailto + .eml).
 Evolution configuration complete.
-Adding folder-color PPA...
-Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
-Hit:2 https://dl.google.com/linux/chrome-stable/deb stable InRelease
-Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease
-Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
-Hit:5 https://downloads.cursor.com/aptrepo stable InRelease
-Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Hit:8 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble InRelease
-Get:9 https://packages.stripe.dev/stripe-cli-debian-local stable InRelease [4,276 B]
-Fetched 4,276 B in 1s (3,099 B/s)
-Reading package lists...
-Repository: 'Types: deb
-URIs: https://ppa.launchpadcontent.net/costales/folder-color/ubuntu/
-Suites: noble
-Components: main
-'
-Description:
-Change a folder color used in Nautilus, Nemo & Caja File Browsers, then you can get a better visual layout
-More info: https://launchpad.net/~costales/+archive/ubuntu/folder-color
-Adding repository.
-Found existing deb entry in /etc/apt/sources.list.d/costales-ubuntu-folder-color-noble.sources
-Updating package lists...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
-Hit:2 https://dl.google.com/linux/chrome-stable/deb stable InRelease
-Hit:3 http://security.ubuntu.com/ubuntu noble-security InRelease
-Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
-Hit:5 https://downloads.cursor.com/aptrepo stable InRelease
-Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Hit:8 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble InRelease
-Get:9 https://packages.stripe.dev/stripe-cli-debian-local stable InRelease [4,276 B]
-Fetched 4,276 B in 1s (3,663 B/s)
-Reading package lists...
-Building dependency tree...
-Reading state information...
-22 packages can be upgraded. Run 'apt list --upgradable' to see them.
-Installing folder-color...
-
-WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
-
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages were automatically installed and are no longer required:
-  hplip-data libfwupd2 libsecret-tools libslirp0 libwoff1 python3-pexpect
-  python3-ptyprocess slirp4netns
-Use 'sudo apt autoremove' to remove them.
-The following additional packages will be installed:
-  gir1.2-nautilus-4.0 python3-nautilus
-The following NEW packages will be installed:
-  folder-color gir1.2-nautilus-4.0 python3-nautilus
-0 upgraded, 3 newly installed, 0 to remove and 22 not upgraded.
-Need to get 4,046 kB of archives.
-After this operation, 11.1 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 gir1.2-nautilus-4.0 amd64 1:46.4-0ubuntu0.2 [5,496 B]
-Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 python3-nautilus amd64 4.0-1build4 [37.6 kB]
-Get:3 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble/main amd64 folder-color all 0.4.2 [4,003 kB]
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend requires a screen at least 13 lines tall and 31 columns wide.)
-debconf: falling back to frontend: Readline
-Fetched 4,046 kB in 3s (1,461 kB/s)
-Selecting previously unselected package gir1.2-nautilus-4.0:amd64.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 289628 files and directories currently installed.)
-Preparing to unpack .../gir1.2-nautilus-4.0_1%3a46.4-0ubuntu0.2_amd64.deb ...
-Unpacking gir1.2-nautilus-4.0:amd64 (1:46.4-0ubuntu0.2) ...
-Selecting previously unselected package python3-nautilus.
-Preparing to unpack .../python3-nautilus_4.0-1build4_amd64.deb ...
-Unpacking python3-nautilus (4.0-1build4) ...
-Selecting previously unselected package folder-color.
-Preparing to unpack .../folder-color_0.4.2_all.deb ...
-Unpacking folder-color (0.4.2) ...
-Setting up gir1.2-nautilus-4.0:amd64 (1:46.4-0ubuntu0.2) ...
-Setting up python3-nautilus (4.0-1build4) ...
-Setting up folder-color (0.4.2) ...
-gtk-update-icon-cache: Cache file created successfully.
-gtk-update-icon-cache: Cache file created successfully.
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-folder-color installed.
+folder-color already installed.
 fzf already installed: 0.67.0 (2ab923f3)
 gnome-tweaks already installed.
 ranger already installed: ranger version: ranger 1.9.3
-Backed up existing config -> /home/zarco/.config/ranger/rc.conf.bak.20260828-114517
+Backed up existing config -> /home/zarco/.config/ranger/rc.conf.bak.20260828-120155
 ranger config written -> /home/zarco/.config/ranger/rc.conf
 screenFetch already installed: [4mscreenFetch[0m - Version 3.9.1
 tmux already installed: tmux 3.4
-Backed up existing config -> /home/zarco/.tmux.conf.bak.20260828-114517
+Backed up existing config -> /home/zarco/.tmux.conf.bak.20260828-120155
 tmux config written -> /home/zarco/.tmux.conf
-Installing WezTerm from the official APT repo (apt.fury.io/wez)...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-curl is already the newest version (8.5.0-2ubuntu10.13).
-gpg is already the newest version (2.4.4-2ubuntu17.4).
-gpg set to manually installed.
-The following packages were automatically installed and are no longer required:
-  hplip-data libfwupd2 libsecret-tools libslirp0 libwoff1 python3-pexpect
-  python3-ptyprocess slirp4netns
-Use 'sudo apt autoremove' to remove them.
-0 upgraded, 0 newly installed, 0 to remove and 22 not upgraded.
-Hit:1 https://download.docker.com/linux/ubuntu noble InRelease
-Hit:2 https://dl.google.com/linux/chrome-stable/deb stable InRelease
-Hit:3 https://packages.stripe.dev/stripe-cli-debian-local stable InRelease
-Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
-Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
-Hit:6 https://downloads.cursor.com/aptrepo stable InRelease
-Hit:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Get:8 https://apt.fury.io/wez * InRelease
-Hit:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Hit:10 https://ppa.launchpadcontent.net/costales/folder-color/ubuntu noble InRelease
-Get:11 https://apt.fury.io/wez */* amd64 Packages [55.2 kB]
-Fetched 60.9 kB in 1s (49.4 kB/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following packages were automatically installed and are no longer required:
-  hplip-data libfwupd2 libsecret-tools libslirp0 libwoff1 python3-pexpect
-  python3-ptyprocess slirp4netns
-Use 'sudo apt autoremove' to remove them.
-The following NEW packages will be installed:
-  wezterm
-0 upgraded, 1 newly installed, 0 to remove and 22 not upgraded.
-Need to get 34.3 MB of archives.
-After this operation, 0 B of additional disk space will be used.
-Get:1 https://apt.fury.io/wez */* amd64 wezterm amd64 20240203-110809-5046fc22 [34.3 MB]
-debconf: unable to initialize frontend: Dialog
-debconf: (Dialog frontend requires a screen at least 13 lines tall and 31 columns wide.)
-debconf: falling back to frontend: Readline
-Fetched 34.3 MB in 4s (9,367 kB/s)
-Selecting previously unselected package wezterm.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 291583 files and directories currently installed.)
-Preparing to unpack .../wezterm_20240203-110809-5046fc22_amd64.deb ...
-Unpacking wezterm (20240203-110809-5046fc22) ...
-Setting up wezterm (20240203-110809-5046fc22) ...
-Processing triggers for hicolor-icon-theme (0.17-2) ...
-Processing triggers for gnome-menus (3.36.0-1.1ubuntu3) ...
-Processing triggers for desktop-file-utils (0.27-2build1) ...
-WezTerm installed: wezterm 20240203-110809-5046fc22
+Reloaded config into running tmux.
+WezTerm already installed: wezterm 20240203-110809-5046fc22
+Backed up existing config -> /home/zarco/.wezterm.lua.bak.20260828-120155
 WezTerm config written -> /home/zarco/.wezterm.lua
+Launcher icon overridden -> /home/zarco/.local/share/applications/org.wezfurlong.wezterm.desktop (Icon=utilities-terminal)
 Config validated OK.
 Installing base packages (zsh, git, curl)...
 Reading package lists...

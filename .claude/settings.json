@@ -11,7 +11,13 @@
       "Bash(gsettings list-recursively *)",
       "Read(//usr/share/sounds/**)",
       "Bash(sudo rm /etc/apt/sources.list.d/brave-browser-nightly.sources)",
-      "Bash(apt policy *)"
+      "Bash(apt policy *)",
+      "Bash(ls /usr/share/applications/ | grep -i wez; ls /usr/share/applications/ | grep -iE 'gnome-terminal|xfce4-terminal' | head; find /usr/share/icons -name 'utilities-terminal*' 2>/dev/null | head -5)",
+      "Read(//usr/share/applications/**)",
+      "Read(//usr/share/icons/**)",
+      "Bash(xdg-mime query *)",
+      "Bash(xdg-settings get *)",
+      "Bash(chmod +x /home/zarco/linux/configs/dolphin.sh /home/zarco/linux/configs/chrome.sh)"
     ]
   }
 }

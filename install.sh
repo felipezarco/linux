@@ -21,6 +21,33 @@ if [[ ! -d "${CONFIGS_DIR}" ]]; then
   exit 1
 fi
 
+# ── Desktop environment gate ──────────────────────────────────────────────────
+# This repo only supports GNOME and XFCE. Detect via XDG_CURRENT_DESKTOP (a
+# colon-separated list like "ubuntu:GNOME" or "XFCE"). Individual configs also
+# self-gate so running them directly on unsupported DEs still fails loudly.
+detect_desktop() {
+  local raw="${XDG_CURRENT_DESKTOP:-${DESKTOP_SESSION:-}}"
+  local token
+  for token in ${raw//:/ }; do
+    case "${token^^}" in
+      GNOME|UBUNTU) echo GNOME; return ;;
+      XFCE)         echo XFCE;  return ;;
+    esac
+  done
+  echo UNKNOWN
+}
+
+DESKTOP="$(detect_desktop)"
+export DESKTOP  # child scripts read this instead of re-detecting.
+
+if [[ "${DESKTOP}" != "GNOME" && "${DESKTOP}" != "XFCE" ]]; then
+  printf 'Error: unsupported desktop environment.\n' >&2
+  printf '  Detected: %s (XDG_CURRENT_DESKTOP=%s)\n' \
+    "${DESKTOP}" "${XDG_CURRENT_DESKTOP:-<unset>}" >&2
+  printf '  This repo only supports GNOME and XFCE.\n' >&2
+  exit 1
+fi
+
 # ── Script discovery ──────────────────────────────────────────────────────────
 scripts=()
 if [[ $# -gt 0 ]]; then
@@ -55,6 +82,8 @@ describe_script() {
     evolution)     printf 'Installing Evolution + restoring mail config (sound, signature, prefs)...' ;;
     folder-color)  printf 'Installing Folder Color for custom folder icons...' ;;
     gnome-tweaks)  printf 'Installing GNOME Tweaks for advanced settings...' ;;
+    dolphin)       printf 'Installing Dolphin and setting as default file manager...' ;;
+    chrome)        printf 'Installing Google Chrome and setting as default browser...' ;;
     *)             printf 'Installing %s...' "$1" ;;
   esac
 }

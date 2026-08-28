@@ -155,10 +155,44 @@ OutputProfile=stereo
 EOF
 cp -f "${SOUND_FILE}" "${SOUND_THEME_DIR}/stereo/message-new-email.oga"
 
-if command -v gsettings >/dev/null 2>&1; then
-  gsettings set org.gnome.desktop.sound theme-name "${SOUND_THEME_NAME}"
-  echo "Sound theme -> ${SOUND_THEME_NAME} (overrides message-new-email)"
+# Point the active sound theme at ours. The setting lives in a different
+# place per DE: GNOME reads gsettings org.gnome.desktop.sound; XFCE reads
+# XSettings via xfconf. libcanberra picks it up from whichever is authoritative
+# for the current session, so writing to the wrong one is a silent no-op.
+if [[ -z "${DESKTOP:-}" ]]; then
+  for token in ${XDG_CURRENT_DESKTOP//:/ } ${DESKTOP_SESSION:-}; do
+    case "${token^^}" in
+      GNOME|UBUNTU) DESKTOP=GNOME; break ;;
+      XFCE)         DESKTOP=XFCE;  break ;;
+    esac
+  done
+  DESKTOP="${DESKTOP:-UNKNOWN}"
 fi
+
+case "${DESKTOP}" in
+  GNOME)
+    if command -v gsettings >/dev/null 2>&1; then
+      gsettings set org.gnome.desktop.sound theme-name "${SOUND_THEME_NAME}"
+      echo "Sound theme -> ${SOUND_THEME_NAME} (gsettings, overrides message-new-email)"
+    else
+      echo "Warning: gsettings missing; sound theme not switched." >&2
+    fi
+    ;;
+  XFCE)
+    if command -v xfconf-query >/dev/null 2>&1; then
+      # -n creates the property if missing; harmless when it already exists.
+      xfconf-query -c xsettings -p /Net/SoundThemeName -n -t string \
+        -s "${SOUND_THEME_NAME}" 2>/dev/null \
+        || xfconf-query -c xsettings -p /Net/SoundThemeName -s "${SOUND_THEME_NAME}"
+      echo "Sound theme -> ${SOUND_THEME_NAME} (xfconf, overrides message-new-email)"
+    else
+      echo "Warning: xfconf-query missing; sound theme not switched." >&2
+    fi
+    ;;
+  *)
+    echo "Warning: unknown desktop (${DESKTOP}); sound theme file installed but not activated." >&2
+    ;;
+esac
 
 # ---------------------------------------------------------------------------
 # 7. Link the signature to the company identity — ONLY if it already exists.
@@ -210,5 +244,23 @@ Icon=org.gnome.Evolution
 X-GNOME-Autostart-Delay=10
 EOF
 echo "Autostart entry installed -> ${AUTOSTART_DIR}/org.gnome.Evolution.desktop"
+
+# ---------------------------------------------------------------------------
+# 9. Make Evolution the default handler for mailto: links and .eml files, so
+#    "compose email" from Chrome/Thunar/anywhere routes here. xdg-mime writes
+#    to ~/.config/mimeapps.list and is honored by GNOME, XFCE, and any
+#    freedesktop-compliant DE.
+# ---------------------------------------------------------------------------
+EVO_DESKTOP="org.gnome.Evolution.desktop"
+if [[ -f "/usr/share/applications/${EVO_DESKTOP}" ]] \
+   && command -v xdg-mime >/dev/null 2>&1; then
+  for mime in \
+      x-scheme-handler/mailto \
+      message/rfc822 \
+      application/x-extension-eml; do
+    xdg-mime default "${EVO_DESKTOP}" "${mime}"
+  done
+  echo "Evolution set as default mail handler (mailto + .eml)."
+fi
 
 echo "Evolution configuration complete."

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls /etc/apt/sources.list.d/ | grep -i chrome)",
+      "Read(//etc/apt/sources.list.d/**)",
+      "Bash(grep -rln \"chrome-nightly\" /etc/apt/ 2>/dev/null)",
+      "Read(//etc/apt/**)",
+      "Bash(gsettings get *)",
+      "Read(//home/zarco/common/**)",
+      "Bash(ps -o lstart= -p 36574)",
+      "Bash(gsettings list-recursively *)",
+      "Read(//usr/share/sounds/**)",
+      "Bash(sudo rm /etc/apt/sources.list.d/brave-browser-nightly.sources)",
+      "Bash(apt policy *)"
+    ]
+  }
+}

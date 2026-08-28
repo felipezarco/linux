@@ -119,6 +119,15 @@ fi
 
 # ---------------------------------------------------------------------------
 # 6. New-mail notification sound — global, so every account uses it.
+#    Two layers are configured so the same .ogg plays regardless of which
+#    subsystem ends up sourcing the sound:
+#      (a) Evolution's own mail-notification plugin (notify-sound-* keys).
+#      (b) The desktop notification the plugin posts via libnotify — GNOME
+#          plays a libcanberra sound for it using the "message-new-email"
+#          event from the current XDG sound theme, on top of (a). Overriding
+#          the freedesktop theme's file would need sudo and break on upgrade,
+#          so instead we install a per-user sound theme that inherits from
+#          freedesktop and overrides ONLY message-new-email.
 # ---------------------------------------------------------------------------
 if command -v gsettings >/dev/null 2>&1; then
   gsettings set "${NOTIFY_SCHEMA}" notify-sound-enabled  true
@@ -129,6 +138,26 @@ if command -v gsettings >/dev/null 2>&1; then
   echo "New-mail sound set -> ${SOUND_FILE}"
 else
   echo "Warning: gsettings not available; skipped new-mail sound." >&2
+fi
+
+SOUND_THEME_NAME="zarco"
+SOUND_THEME_DIR="${HOME}/.local/share/sounds/${SOUND_THEME_NAME}"
+mkdir -p "${SOUND_THEME_DIR}/stereo"
+cat > "${SOUND_THEME_DIR}/index.theme" <<EOF
+[Sound Theme]
+Name=Zarco
+Comment=Personal overrides on top of freedesktop
+Inherits=freedesktop
+Directories=stereo
+
+[stereo]
+OutputProfile=stereo
+EOF
+cp -f "${SOUND_FILE}" "${SOUND_THEME_DIR}/stereo/message-new-email.oga"
+
+if command -v gsettings >/dev/null 2>&1; then
+  gsettings set org.gnome.desktop.sound theme-name "${SOUND_THEME_NAME}"
+  echo "Sound theme -> ${SOUND_THEME_NAME} (overrides message-new-email)"
 fi
 
 # ---------------------------------------------------------------------------

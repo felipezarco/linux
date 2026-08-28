@@ -81,6 +81,17 @@ draw_progress() {
   _drawn=2
 }
 
+# ── Sudo up front ─────────────────────────────────────────────────────────────
+# Prompt for the password once, before the progress bar starts, and keep the
+# timestamp alive in the background so individual scripts don't stop to ask.
+if ! sudo -v; then
+  echo "Error: sudo authentication failed." >&2
+  exit 1
+fi
+( while true; do sudo -n true; sleep 60; kill -0 "$$" 2>/dev/null || exit; done ) &
+SUDO_KEEPALIVE_PID=$!
+trap 'kill "${SUDO_KEEPALIVE_PID}" 2>/dev/null || true' EXIT
+
 # ── Run ───────────────────────────────────────────────────────────────────────
 total=${#scripts[@]}
 : > "${LOG_FILE}"

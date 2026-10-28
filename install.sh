@@ -77,7 +77,7 @@ describe_script() {
     fzf)           printf 'Installing fzf fuzzy finder...' ;;
     ranger)        printf 'Installing ranger for file navigation...' ;;
     wezterm)       printf 'Setting pre-defined configs for WezTerm...' ;;
-    tmux)          printf 'Setting pre-defined configs for tmux...' ;;
+    tmux)          printf 'Setting pre-defined configs for tmux (+ xclip clipboard)...' ;;
     screenfetch)   printf 'Installing screenfetch for system info display...' ;;
     evolution)     printf 'Installing Evolution + restoring mail config (sound, signature, prefs)...' ;;
     folder-color)  printf 'Installing Folder Color for custom folder icons...' ;;
